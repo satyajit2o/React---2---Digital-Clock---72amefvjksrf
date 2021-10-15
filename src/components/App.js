@@ -11,6 +11,8 @@ class App extends Component {
            var hr=date.getHours();
            var min=date.getMinutes();
            var sec=date.getSeconds();
+	       hr = hr % 12;
+            hr = hr ? hr : 12;
           this.setState({hh:hr,mm:min,ss:sec});
          if(hr>=12 && frame=="AM"){
              this.setState({frame:"PM"});
