@@ -35,7 +35,7 @@ class App extends Component {
         return(
             <>
             < div className="Clock">
-               <h3 id="time">{this.state.hh +":"+this.state.mm +":"+this.state.ss+" "+this.state.frame}</h3>
+               <h3 id="time">{this.state.hh +":"+(this.state.mm<10?"0":"")+this.state.mm +":"+(this.state.ss<10?"0":"")+this.state.ss+" "+this.state.frame}</h3>
                </div>
             </>
         )
