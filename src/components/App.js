@@ -4,7 +4,7 @@ import '../styles/App.css';
 class App extends Component {
     constructor(props) {
 		super(props);
-       this.state={hh:0,mm:0,ss:0,frame:"AM"}
+       this.state={hh:0,mm:0,ss:0,frame:""}
        
       
     };
@@ -15,10 +15,11 @@ class App extends Component {
             var hr=date.getHours();
             var min=date.getMinutes();
             var sec=date.getSeconds();
+            var hr2=hr;
             hr = hr % 12;
              hr = hr ? hr : 12;
            this.setState({hh:hr,mm:min,ss:sec});
-          if(hr>=12 && frame=="AM"){
+          if(hr2>=12 ){
               this.setState({frame:"PM"});
           }
           else{
