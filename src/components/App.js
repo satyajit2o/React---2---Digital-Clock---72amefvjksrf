@@ -6,23 +6,28 @@ class App extends Component {
 		super(props);
        this.state={hh:0,mm:0,ss:0,frame:"AM"}
        
-       var val=setInterval(()=>{
-           var date=new Date();
-           var hr=date.getHours();
-           var min=date.getMinutes();
-           var sec=date.getSeconds();
-	       hr = hr % 12;
-            hr = hr ? hr : 12;
-          this.setState({hh:hr,mm:min,ss:sec});
-         if(hr>=12 && frame=="AM"){
-             this.setState({frame:"PM"});
-         }
-         else{
-            this.setState({frame:"AM"});
-         }
-
-    },1000);
+      
     };
+
+    componentDidMount(){
+        var val=setInterval(()=>{
+            var date=new Date();
+            var hr=date.getHours();
+            var min=date.getMinutes();
+            var sec=date.getSeconds();
+            hr = hr % 12;
+             hr = hr ? hr : 12;
+           this.setState({hh:hr,mm:min,ss:sec});
+          if(hr>=12 && frame=="AM"){
+              this.setState({frame:"PM"});
+          }
+          else{
+             this.setState({frame:"AM"});
+          }
+ 
+     },1000);
+    }
+
      
     render() {
 
