@@ -29,6 +29,10 @@ class App extends Component {
      },1000);
     }
 
+    componentWillUnmount(){
+        clearInterval(val);
+    }
+
      
     render() {
 
